@@ -1,0 +1,4 @@
+id: brave
+name: Brave
+type: web
+executable: /Applications/Brave Browser.app/Contents/MacOS/Brave Browser
