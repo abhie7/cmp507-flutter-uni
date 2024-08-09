@@ -11,20 +11,29 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:_4_media_in_flutter/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Verify images and text in the app', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that the network image is present.
+    expect(find.byType(Image), findsNWidgets(2));
+    expect(
+        find.byWidgetPredicate((Widget widget) =>
+            widget is Image &&
+            widget.image is NetworkImage &&
+            (widget.image as NetworkImage).url ==
+                'https://avatars.githubusercontent.com/u/117913120?v=4'),
+        findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Verify that the asset image is present.
+    expect(
+        find.byWidgetPredicate((Widget widget) =>
+            widget is Image &&
+            widget.image is AssetImage &&
+            (widget.image as AssetImage).assetName == 'assets/img.jpeg'),
+        findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that the text is present.
+    expect(find.text('Abhiraj Chaudhuri Image Practical 4'), findsOneWidget);
   });
 }
