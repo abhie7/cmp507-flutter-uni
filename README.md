@@ -16,6 +16,8 @@ This repository contains all the Flutter projects developed during our universit
 | 1          | Hello World              | A simple Flutter app to display a welcome message | [View](https://abhie7.github.io/cmp507-flutter-uni/1_hello_world/)    |
 | 2          | Navigation b/w 2 Screens | A basic feature to switch between 2 screens       | [View](https://abhie7.github.io/cmp507-flutter-uni/2_nav_bw_screens/) |
 | 3          | Text Input               | A simple text input app                           | [View](https://abhie7.github.io/cmp507-flutter-uni/3_text_input/)     |
+| 4          | Media Integration        | Implemention media integration in flutter         | [View](https://abhie7.github.io/cmp507-flutter-uni/4_media/)          |
+| 6          | Google Maps API          | Simple Google Maps API integration                | [View](https://abhie7.github.io/cmp507-flutter-uni/6_google_maps/)    |
 
 ## Setup
 
